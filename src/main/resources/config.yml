@@ -1,0 +1,4 @@
+# configuration file, v1.0.0.
+
+fireworks:
+  explode-fail-rate: "1%" # how frequently should fireworks fail and explode upon usage.
