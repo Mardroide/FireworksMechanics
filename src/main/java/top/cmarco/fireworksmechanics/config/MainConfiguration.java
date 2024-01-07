@@ -19,4 +19,19 @@ public final class MainConfiguration {
     public double getExplodeFailRate() {
         return config.getDouble("explode-fail-rate");
     }
+
+    public double getEarlyExplodeRate() {
+        return config.getDouble("early-explode-rate");
+    }
+
+    public int getEarlyExplodePreset() {
+        int preset = config.getInt("early-explode-preset");
+
+        return switch (preset) {
+            case 1 -> 20;
+            case 2 -> 30;
+            case 3 -> 40;
+            default -> 0;
+        };
+    }
 }

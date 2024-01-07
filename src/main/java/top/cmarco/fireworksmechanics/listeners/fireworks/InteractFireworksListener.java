@@ -13,7 +13,6 @@ import top.cmarco.fireworksmechanics.handlers.HandleFireworkMechanics;
 import top.cmarco.fireworksmechanics.utils.RandomExplosionTrigger;
 
 public class InteractFireworksListener implements Listener {
-    private RandomExplosionTrigger trigger;
     private HandleFireworkMechanics mechanics;
 
     @EventHandler(priority = EventPriority.NORMAL)
@@ -22,7 +21,7 @@ public class InteractFireworksListener implements Listener {
 
         if (event.getAction() != Action.RIGHT_CLICK_BLOCK) return;
         if (itemInHand(player)) return;
-        if (trigger.failureTrigger()) return;
+        if (RandomExplosionTrigger.failureTrigger()) return;
 
         event.setCancelled(true);
         mechanics.handlePlayerExplosion(player);
