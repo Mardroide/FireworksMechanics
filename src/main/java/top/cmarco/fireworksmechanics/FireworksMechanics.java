@@ -3,13 +3,14 @@ package top.cmarco.fireworksmechanics;
 import lombok.Getter;
 import org.bukkit.plugin.java.JavaPlugin;
 import top.cmarco.fireworksmechanics.config.MainConfiguration;
-import top.cmarco.fireworksmechanics.listeners.InteractListener;
+import top.cmarco.fireworksmechanics.listeners.PlayerDeathListener;
+import top.cmarco.fireworksmechanics.listeners.fireworks.InteractFireworksListener;
+import top.cmarco.fireworksmechanics.utils.ColorFormatter;
 
 @Getter
 public final class FireworksMechanics extends JavaPlugin {
 
     private MainConfiguration mainConfiguration;
-    private InteractListener interactListener;
 
     /**
      * Load the config and read its values from config.yml
@@ -19,19 +20,17 @@ public final class FireworksMechanics extends JavaPlugin {
         mainConfiguration.loadValues();
     }
 
-    /**
-     * Start all listeners of this plugin.
-     */
-    private void startListeners() {
-        getServer().getPluginManager().registerEvents(interactListener = new InteractListener(this),this);
-    }
-
-    /**
-     * Startup method for this plugin.
-     */
     @Override
     public void onEnable() {
         startConfig();
-        startListeners();
+
+        getServer().getPluginManager().registerEvents(new InteractFireworksListener(), this);
+        getServer().getPluginManager().registerEvents(new PlayerDeathListener(), this);
+        ColorFormatter.sendConsoleMessage("&2[FireworksMechanics] &aenabled!");
+    }
+
+    @Override
+    public void onDisable() {
+        ColorFormatter.sendConsoleMessage("&2[FireworksMechanics] &cdisabled!");
     }
 }
