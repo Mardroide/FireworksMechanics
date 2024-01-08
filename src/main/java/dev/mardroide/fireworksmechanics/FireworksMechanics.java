@@ -30,9 +30,11 @@ public final class FireworksMechanics extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PrimedDynamiteSpawnListener(), this);
         getServer().getPluginManager().registerEvents(new DynamiteExplodeListener(), this);
 
+        Bukkit.getConsoleSender().sendMessage(PREFIX + ChatColor.GREEN + " ready to work!");
+
         new UpdateChecker(this, resourceId).getVersion(version -> {
             if (!this.getDescription().getVersion().equals(version)) {
-                Bukkit.getConsoleSender().sendMessage(PREFIX + ChatColor.GREEN + " ready to work!");
+                Bukkit.getConsoleSender().sendMessage(PREFIX + ChatColor.YELLOW + " new update available!");
             }
         });
     }
