@@ -2,6 +2,7 @@
 
 fireworks:
   explode-fail-rate: 30 # how frequently should fireworks fail and don't work. 0 - 100 (%)
+  boost-fail-rate: 40 # how frequently should fireworks fail (reduce boost) when use elytra.
 
 dynamite:
   early-explode-rate: 30 # how frequently should fireworks or dynamite explode early. 0 - 100 (%)

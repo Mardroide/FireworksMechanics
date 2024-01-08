@@ -1,7 +1,5 @@
-package top.cmarco.fireworksmechanics.listeners;
+package dev.mardroide.fireworksmechanics.listeners;
 
-import org.bukkit.Material;
-import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

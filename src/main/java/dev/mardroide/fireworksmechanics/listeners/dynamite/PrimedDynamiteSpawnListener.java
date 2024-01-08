@@ -1,16 +1,17 @@
-package top.cmarco.fireworksmechanics.listeners.dynamite;
+package dev.mardroide.fireworksmechanics.listeners.dynamite;
 
+import dev.mardroide.fireworksmechanics.config.MainConfiguration;
+import dev.mardroide.fireworksmechanics.utils.RandomExplosionTrigger;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.TNTPrimed;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntitySpawnEvent;
-import top.cmarco.fireworksmechanics.config.MainConfiguration;
-import top.cmarco.fireworksmechanics.utils.RandomExplosionTrigger;
 
 public class PrimedDynamiteSpawnListener implements Listener {
     private MainConfiguration config;
+
     @EventHandler(priority = EventPriority.NORMAL)
     public void onPrimedDinamyteSpawn(EntitySpawnEvent event) {
         EntityType type = event.getEntityType();

@@ -1,4 +1,4 @@
-package top.cmarco.fireworksmechanics.listeners.dynamite;
+package dev.mardroide.fireworksmechanics.listeners.dynamite;
 
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;

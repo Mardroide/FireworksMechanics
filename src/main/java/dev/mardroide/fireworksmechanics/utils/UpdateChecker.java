@@ -1,7 +1,7 @@
-package top.cmarco.fireworksmechanics.utils;
+package dev.mardroide.fireworksmechanics.utils;
 
+import dev.mardroide.fireworksmechanics.FireworksMechanics;
 import org.bukkit.Bukkit;
-import top.cmarco.fireworksmechanics.FireworksMechanics;
 
 import java.io.IOException;
 import java.io.InputStream;

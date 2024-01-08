@@ -1,11 +1,8 @@
-package top.cmarco.fireworksmechanics.config;
+package dev.mardroide.fireworksmechanics.config;
 
-import lombok.RequiredArgsConstructor;
-import org.bukkit.Bukkit;
+import dev.mardroide.fireworksmechanics.FireworksMechanics;
 import org.bukkit.configuration.file.FileConfiguration;
-import top.cmarco.fireworksmechanics.FireworksMechanics;
 
-@RequiredArgsConstructor
 public final class MainConfiguration {
     private FireworksMechanics plugin;
     private static FileConfiguration config = null;
@@ -23,6 +20,10 @@ public final class MainConfiguration {
 
     public static double getExplodeFailRate() {
         return config.getDouble("fireworks.explode-fail-rate");
+    }
+
+    public static double getBoostFailRate() {
+        return config.getDouble("fireworks.boost-fail-rate");
     }
 
     public static double getEarlyExplodeRate() {
