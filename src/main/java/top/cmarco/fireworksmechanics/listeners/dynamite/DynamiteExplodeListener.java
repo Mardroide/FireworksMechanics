@@ -12,6 +12,6 @@ public class DynamiteExplodeListener implements Listener {
         EntityType entityType = event.getEntity().getType();
         if (!entityType.equals(EntityType.PRIMED_TNT)) return;
 
-        event.setCancelled(true);
+        //event.setCancelled(true);
     }
 }

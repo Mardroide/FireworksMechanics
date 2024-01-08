@@ -2,5 +2,7 @@
 
 fireworks:
   explode-fail-rate: 30 # how frequently should fireworks fail and don't work. 0 - 100 (%)
+
+dynamite:
   early-explode-rate: 30 # how frequently should fireworks or dynamite explode early. 0 - 100 (%)
   early-explode-preset: 1 # early explode preset (1 = 1 seconds, 2 = 1.5 seconds, 3 = 2 seconds)

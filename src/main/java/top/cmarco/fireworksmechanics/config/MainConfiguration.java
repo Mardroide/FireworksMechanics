@@ -1,13 +1,18 @@
 package top.cmarco.fireworksmechanics.config;
 
 import lombok.RequiredArgsConstructor;
+import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import top.cmarco.fireworksmechanics.FireworksMechanics;
 
 @RequiredArgsConstructor
 public final class MainConfiguration {
-    private final FireworksMechanics plugin;
-    private FileConfiguration config = null;
+    private FireworksMechanics plugin;
+    private static FileConfiguration config = null;
+
+    public MainConfiguration(FireworksMechanics plugin) {
+        this.plugin = plugin;
+    }
 
     public void loadValues() {
         if (config == null) {
@@ -16,16 +21,16 @@ public final class MainConfiguration {
         }
     }
 
-    public double getExplodeFailRate() {
-        return config.getDouble("explode-fail-rate");
+    public static double getExplodeFailRate() {
+        return config.getDouble("fireworks.explode-fail-rate");
     }
 
-    public double getEarlyExplodeRate() {
-        return config.getDouble("early-explode-rate");
+    public static double getEarlyExplodeRate() {
+        return config.getDouble("dynamite.early-explode-rate");
     }
 
-    public int getEarlyExplodePreset() {
-        int preset = config.getInt("early-explode-preset");
+    public static int getEarlyExplodePreset() {
+        int preset = config.getInt("dynamite.early-explode-preset");
 
         return switch (preset) {
             case 1 -> 20;

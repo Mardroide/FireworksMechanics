@@ -18,6 +18,6 @@ public class PrimedDynamiteSpawnListener implements Listener {
         if (RandomExplosionTrigger.earlyExplodeTrigger()) return;
 
         TNTPrimed dynamite = (TNTPrimed) event.getEntity();
-        dynamite.setFuseTicks(config.getEarlyExplodePreset()); // 1 second
+        dynamite.setFuseTicks(MainConfiguration.getEarlyExplodePreset());
     }
 }
