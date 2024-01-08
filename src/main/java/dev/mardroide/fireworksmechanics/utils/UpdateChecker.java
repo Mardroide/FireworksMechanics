@@ -10,22 +10,20 @@ import java.util.Scanner;
 import java.util.function.Consumer;
 
 public class UpdateChecker {
-    private final FireworksMechanics plugin;
     private final int resourceId;
 
-    public UpdateChecker(FireworksMechanics plugin, int resourceId) {
-        this.plugin = plugin;
+    public UpdateChecker(int resourceId) {
         this.resourceId = resourceId;
     }
 
     public void getVersion(final Consumer<String> consumer) {
-        Bukkit.getScheduler().runTaskAsynchronously(this.plugin, () -> {
+        Bukkit.getScheduler().runTaskAsynchronously(FireworksMechanics.getInstance(), () -> {
             try (InputStream is = new URL("https://api.spigotmc.org/legacy/update.php?resource=" + this.resourceId + "/~").openStream(); Scanner scann = new Scanner(is)) {
                 if (scann.hasNext()) {
                     consumer.accept(scann.next());
                 }
             } catch (IOException e) {
-                plugin.getLogger().info("Unable to check for updates: " + e.getMessage());
+                FireworksMechanics.getInstance().getLogger().info("Unable to check for updates: " + e.getMessage());
             }
         });
     }

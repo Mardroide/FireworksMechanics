@@ -25,19 +25,4 @@ public final class MainConfiguration {
     public static double getBoostFailRate() {
         return config.getDouble("fireworks.boost-fail-rate");
     }
-
-    public static double getEarlyExplodeRate() {
-        return config.getDouble("dynamite.early-explode-rate");
-    }
-
-    public static int getEarlyExplodePreset() {
-        int preset = config.getInt("dynamite.early-explode-preset");
-
-        return switch (preset) {
-            case 1 -> 20;
-            case 2 -> 30;
-            case 3 -> 40;
-            default -> 0;
-        };
-    }
 }
