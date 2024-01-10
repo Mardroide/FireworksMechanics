@@ -1,4 +1,4 @@
-# configuration file, v1.0.0.
+# configuration file, v1.0.0-alpha.
 
 fireworks:
   explode-fail-rate: 30 # how frequently should fireworks fail and don't work. 0 - 100 (%)
