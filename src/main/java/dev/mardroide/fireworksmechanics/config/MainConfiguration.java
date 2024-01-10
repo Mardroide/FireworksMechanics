@@ -25,4 +25,8 @@ public final class MainConfiguration {
     public static double getBoostFailRate() {
         return config.getDouble("fireworks.boost-fail-rate");
     }
+
+    public static double getEarlyExplodeRate() {
+        return  config.getDouble("dynamite.early-explode-rate");
+    }
 }

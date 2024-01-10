@@ -1,6 +1,7 @@
 package dev.mardroide.fireworksmechanics;
 
 import dev.mardroide.fireworksmechanics.listeners.PlayerDeathListener;
+import dev.mardroide.fireworksmechanics.listeners.dinamyte.TntPrimeListener;
 import dev.mardroide.fireworksmechanics.listeners.fireworks.InteractFireworksListener;
 import dev.mardroide.fireworksmechanics.recipes.ReinforcedFirework;
 import org.bukkit.Bukkit;
@@ -25,6 +26,7 @@ public final class FireworksMechanics extends JavaPlugin {
 
         getServer().getPluginManager().registerEvents(new InteractFireworksListener(), this);
         getServer().getPluginManager().registerEvents(new PlayerDeathListener(), this);
+        getServer().getPluginManager().registerEvents(new TntPrimeListener(), this);
 
         Bukkit.getConsoleSender().sendMessage(PREFIX + ChatColor.GREEN + " ready to work!");
 

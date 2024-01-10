@@ -13,8 +13,6 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.concurrent.ThreadLocalRandom;
-
 public class InteractFireworksListener implements Listener {
     @EventHandler()
     public void onInteraction(PlayerInteractEvent event) {
