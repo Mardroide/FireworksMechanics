@@ -2,6 +2,7 @@ package dev.mardroide.fireworksmechanics.listeners.fireworks;
 
 import dev.mardroide.fireworksmechanics.config.MainConfiguration;
 import dev.mardroide.fireworksmechanics.utils.GenerateRandomTrigger;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -23,6 +24,8 @@ public class InteractFireworksListener implements Listener {
         if (!itemEquippedInAnyHand(player)) return;
         double trigger = new GenerateRandomTrigger().getRandom();
 
+        if (handItem.getItemMeta().getDisplayName().equals("Reinforced firework")) trigger *= 1.5;
+
         if (event.getAction() == Action.RIGHT_CLICK_BLOCK) {
             if (trigger > MainConfiguration.getExplodeFailRate("fireworks")) return;
 
@@ -42,8 +45,8 @@ public class InteractFireworksListener implements Listener {
     }
 
     private boolean itemEquippedInAnyHand(@NotNull Player player) {
-        boolean mainHandEquipped = player.getInventory().getItemInMainHand().getType().equals(Material.FIREWORK_ROCKET);
-        boolean secondaryHandEquipped = player.getInventory().getItemInOffHand().getType().equals(Material.FIREWORK_ROCKET);
+        boolean mainHandEquipped = player.getInventory().getItemInMainHand().getType() == Material.FIREWORK_ROCKET;
+        boolean secondaryHandEquipped = player.getInventory().getItemInOffHand().getType() == Material.FIREWORK_ROCKET;
         return mainHandEquipped || secondaryHandEquipped;
     }
 

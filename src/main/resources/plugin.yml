@@ -5,4 +5,5 @@ api-version: '1.13'
 author: 'Mardroide'
 description: 'SpigotMC plugin to add new explosive mechanics to fireworks and dynamites.'
 commands:
-  fm:
+  fmreload:
+    aliases: ['fmr']
