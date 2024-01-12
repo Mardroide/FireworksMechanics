@@ -14,19 +14,27 @@ public final class MainConfiguration {
     public void loadValues() {
         if (config == null) {
             plugin.saveDefaultConfig();
-            this.config = plugin.getConfig();
+            config = plugin.getConfig();
         }
     }
 
-    public static double getExplodeFailRate() {
-        return config.getDouble("fireworks.explode-fail-rate");
+    public static double getExplodeFailRate(String path) {
+        return config.getDouble(path + ".explode-fail-rate");
     }
 
     public static double getBoostFailRate() {
         return config.getDouble("fireworks.boost-fail-rate");
     }
 
-    public static double getEarlyExplodeRate() {
-        return  config.getDouble("dynamite.early-explode-rate");
+    public static boolean getDropItemOption() {
+        return config.getBoolean("dynamite.drop-dynamite");
+    }
+
+    public static boolean getReduceFireTicksOption() {
+        return  config.getBoolean("dynamite.reduce-fire-ticks");
+    }
+
+    public static int getFireTicksSeconds() {
+        return config.getInt("dynamite.fire-ticks-seconds");
     }
 }

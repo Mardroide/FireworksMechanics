@@ -1,8 +1,14 @@
-# configuration file, v1.0.0-alpha.
+# Configuration file, v1.0.0-alpha.
+# All fields represent a percentage 0 - 100 (%).
+# For better experience set between 1 - 15.
 
 fireworks:
-  explode-fail-rate: 30 # how frequently should fireworks fail and don't work. 0 - 100 (%)
-  boost-fail-rate: 40 # how frequently should fireworks fail (reduce boost) when use elytra.
+  explode-fail-rate: 30 # How frequently should fireworks fail and don't work.
+  boost-fail-rate: 40 # How frequently should fireworks fail (reduce boost) when use elytra.
 
 dynamite:
-  early-explode-rate: 50
+  reduce-fire-ticks: true # Reduce the waiting time till the dynamite explode.
+  fire-ticks-seconds: 1 # Amount of seconds for the tnt to explode.
+
+  drop-dynamite: true # Dropping the item on explosion failure.
+  explode-fail-rate: 30  # How frequently should dynamite fail and don't explode.

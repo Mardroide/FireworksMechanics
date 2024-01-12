@@ -14,15 +14,17 @@ import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 public class InteractFireworksListener implements Listener {
+
     @EventHandler()
     public void onInteraction(PlayerInteractEvent event) {
         Player player = event.getPlayer();
         ItemStack handItem = event.getItem();
 
         if (!itemEquippedInAnyHand(player)) return;
+        double trigger = new GenerateRandomTrigger().getRandom();
 
         if (event.getAction() == Action.RIGHT_CLICK_BLOCK) {
-            if (GenerateRandomTrigger.randomTrigger() >= MainConfiguration.getExplodeFailRate()) return;
+            if (trigger > MainConfiguration.getExplodeFailRate("fireworks")) return;
 
             event.setCancelled(true);
             handlePlayerExplosion(player);
@@ -30,7 +32,7 @@ public class InteractFireworksListener implements Listener {
         }
 
         if (event.getAction() == Action.RIGHT_CLICK_AIR) {
-            if (GenerateRandomTrigger.randomTrigger() >= MainConfiguration.getBoostFailRate()) return;
+            if (trigger > MainConfiguration.getBoostFailRate()) return;
             if (!player.isGliding()) return;
 
             event.setCancelled(true);
@@ -47,7 +49,7 @@ public class InteractFireworksListener implements Listener {
 
     private void handlePlayerExplosion(@NotNull Player player) {
         Location playerLocation = player.getLocation();
-        player.getWorld().createExplosion(playerLocation, 2f, true, false);
+        player.getWorld().createExplosion(playerLocation.getX(), playerLocation.getY(), playerLocation.getZ(), 1f, true, false);
     }
 
     public static void handleFireworkElytraFailure(@NotNull Player player) {
