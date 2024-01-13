@@ -1,6 +1,4 @@
-# CHANGELOG
-
-## 1.0.0
+## CHANGELOG
 
 Fireworks:
 - Add early explode failure event.

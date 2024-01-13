@@ -47,11 +47,6 @@ jobs:
           name: FireworksMechanics
           path: target/FireworksMechanics-**.jar
 
-      - name: Download Artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: FireworksMechanics
-
       - name: Create Latest Release
         id: create_release
         uses: actions/create-release@v1
@@ -68,6 +63,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: FireworksMechanics-${{ steps.get_version.outputs.version }}.jar
+          asset_path: FireworksMechanics-**.jar
           asset_name: FireworksMechanics-${{ steps.get_version.outputs.version }}.jar
           asset_content_type: application/java-archive
