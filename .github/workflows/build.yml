@@ -52,6 +52,9 @@ jobs:
         with:
           name: FireworksMechanics
 
+      - name: View content
+        run: ls -R
+
       - name: Create Latest Release
         id: create_release
         uses: actions/create-release@v1
