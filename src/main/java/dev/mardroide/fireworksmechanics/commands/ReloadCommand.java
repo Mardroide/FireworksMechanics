@@ -14,12 +14,12 @@ public class ReloadCommand implements CommandExecutor {
         if (sender instanceof Player) {
             Player player = (Player) sender;
             if (player.hasPermission("fireworksmechanics.reload") || player.isOp()) {
-                FireworksMechanics.getInstance().saveDefaultConfig();
+                FireworksMechanics.getInstance().reloadConfig();
                 player.sendMessage(ChatColor.GREEN + "FireworksMechanics reloaded!");
                 return true;
             }
         } else {
-            FireworksMechanics.getInstance().saveDefaultConfig();
+            FireworksMechanics.getInstance().reloadConfig();
             Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "FireworksMechanics reloaded!");
         }
 
