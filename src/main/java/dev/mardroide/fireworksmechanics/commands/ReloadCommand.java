@@ -11,10 +11,13 @@ import org.bukkit.entity.Player;
 public class ReloadCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (sender instanceof Player player && (player.hasPermission("fireworksmechanics.reload") || player.isOp())) {
-            FireworksMechanics.getInstance().saveDefaultConfig();
-            player.sendMessage(ChatColor.GREEN + "FireworksMechanics reloaded!");
-            return true;
+        if (sender instanceof Player) {
+            Player player = (Player) sender;
+            if (player.hasPermission("fireworksmechanics.reload") || player.isOp()) {
+                FireworksMechanics.getInstance().saveDefaultConfig();
+                player.sendMessage(ChatColor.GREEN + "FireworksMechanics reloaded!");
+                return true;
+            }
         } else {
             FireworksMechanics.getInstance().saveDefaultConfig();
             Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "FireworksMechanics reloaded!");
