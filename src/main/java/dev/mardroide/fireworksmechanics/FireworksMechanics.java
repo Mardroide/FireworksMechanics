@@ -30,7 +30,7 @@ public final class FireworksMechanics extends JavaPlugin {
 
         Bukkit.getConsoleSender().sendMessage(PREFIX + ChatColor.GREEN + " ready to work!");
 
-        int resourceId = 12345;
+        int resourceId = 114491;
         new UpdateChecker(resourceId).getVersion(version -> {
             if (!this.getDescription().getVersion().equals(version)) {
                 Bukkit.getConsoleSender().sendMessage(PREFIX + ChatColor.YELLOW + " new update available!");
