@@ -47,6 +47,11 @@ jobs:
           name: FireworksMechanics
           path: target/FireworksMechanics-**.jar
 
+      - name: Download Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: FireworksMechanics
+
       - name: Create Latest Release
         id: create_release
         uses: actions/create-release@v1
