@@ -1,7 +1,7 @@
 name: FireworksMechanics
 version: '${project.version}'
 main: 'dev.mardroide.fireworksmechanics.FireworksMechanics'
-api-version: '1.13'
+api-version: '1.14'
 author: 'Mardroide'
 description: 'SpigotMC plugin to add new explosive mechanics to fireworks and dynamites.'
 commands:
