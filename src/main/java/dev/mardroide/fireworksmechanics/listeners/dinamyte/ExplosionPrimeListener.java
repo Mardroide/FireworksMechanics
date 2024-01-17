@@ -26,12 +26,12 @@ public class ExplosionPrimeListener implements Listener {
         TNTPrimed dynamite = (TNTPrimed) event.getEntity();
         Entity source = dynamite.getSource();
 
-
-        if (MainConfiguration.getReduceFireTicksOption()) {
-            int ticks = MainConfiguration.getFireTicksSeconds() * 20;
+        if (FireworksMechanics.getInstance().getConfig().getBoolean("dynamite.reduce-fire-ticks")) {
+            int ticks = FireworksMechanics.getInstance().getConfig().getInt("dynamite.fire-ticks-seconds") * 20;
             dynamite.setFuseTicks(ticks);
         }
 
+        if (source == null) return;
         if (source.getType() == EntityType.PLAYER && source.isValid()) {
             double random = new GenerateRandomTrigger().getRandom();
 
@@ -39,7 +39,7 @@ public class ExplosionPrimeListener implements Listener {
             entity.getPersistentDataContainer().set(key, PersistentDataType.BYTE, (byte) 1);
             event.setCancelled(true);
 
-            if (!MainConfiguration.getDropItemOption()) return;
+            if (!FireworksMechanics.getInstance().getConfig().getBoolean("dynamite.drop-dynamite")) return;
             Location blockLocation = entity.getLocation();
             entity.getLocation().getWorld().dropItem(blockLocation, new ItemStack(Material.TNT, 1));
         }

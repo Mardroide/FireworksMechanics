@@ -22,19 +22,7 @@ public final class MainConfiguration {
         return config.getDouble(path + ".explode-fail-rate");
     }
 
-    public static double getBoostFailRate() {
-        return config.getDouble("fireworks.boost-fail-rate");
-    }
-
-    public static boolean getDropItemOption() {
-        return config.getBoolean("dynamite.drop-dynamite");
-    }
-
-    public static boolean getReduceFireTicksOption() {
-        return  config.getBoolean("dynamite.reduce-fire-ticks");
-    }
-
-    public static int getFireTicksSeconds() {
-        return config.getInt("dynamite.fire-ticks-seconds");
+    public static boolean getDispenserFeature(String path) {
+        return config.getBoolean("dispensers." + path);
     }
 }

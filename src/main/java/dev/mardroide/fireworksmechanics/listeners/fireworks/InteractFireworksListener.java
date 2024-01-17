@@ -1,8 +1,8 @@
 package dev.mardroide.fireworksmechanics.listeners.fireworks;
 
+import dev.mardroide.fireworksmechanics.FireworksMechanics;
 import dev.mardroide.fireworksmechanics.config.MainConfiguration;
 import dev.mardroide.fireworksmechanics.utils.GenerateRandomTrigger;
-import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -35,7 +35,7 @@ public class InteractFireworksListener implements Listener {
         }
 
         if (event.getAction() == Action.RIGHT_CLICK_AIR) {
-            if (trigger > MainConfiguration.getBoostFailRate()) return;
+            if (trigger > FireworksMechanics.getInstance().getConfig().getDouble("fireworks.boost-fail-rate")) return;
             if (!player.isGliding()) return;
 
             event.setCancelled(true);

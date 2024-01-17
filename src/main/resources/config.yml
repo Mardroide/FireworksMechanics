@@ -1,10 +1,11 @@
-# Configuration file, v1.0.0-alpha.
+# Configuration file, v1.1.0.
 # All fields represent a percentage 0 - 100 (%).
 # For better experience set between 1 - 15.
+# To disable a failure feature just set the probability to 0.
 
 fireworks:
   explode-fail-rate: 10 # How frequently should fireworks fail and don't work.
-  boost-fail-rate: 10 # How frequently should fireworks fail (reduce boost) when use elytra.
+  boost-fail-rate: 10 # How frequently should fireworks fail (reduce boost) when using elytra.
 
 dynamite:
   reduce-fire-ticks: true # Reduce the waiting time till the dynamite explode.
@@ -12,3 +13,8 @@ dynamite:
 
   drop-dynamite: true # Dropping the item on explosion failure.
   explode-fail-rate: 30  # How frequently should dynamite fail and don't explode.
+
+dispensers:
+  dynamite: true # Enable feature for fireworks.
+  fireworks: true # Enable feature for fireworks.
+  explode-fail-rate: 10 # How frequently should artifacts fail when being dispensed.
