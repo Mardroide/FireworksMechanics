@@ -2,7 +2,6 @@ package dev.mardroide.fireworksmechanics.listeners;
 
 import dev.mardroide.fireworksmechanics.config.MainConfiguration;
 import dev.mardroide.fireworksmechanics.utils.GenerateRandomTrigger;
-import jdk.tools.jmod.Main;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
